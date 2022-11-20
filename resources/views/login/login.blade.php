@@ -20,13 +20,13 @@
                                             style="letter-spacing: 1px; font-weight: bold">ĐĂNG NHẬP</h5>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form2Example17">Email address</label>
-                                            <input name="email" type="email" id="form2Example17" class="form-control form-control-lg" required/>
+                                            <label class="form-label" for="txtEmail">Email address</label>
+                                            <input name="email" type="email" id="txtEmail" class="form-control form-control-lg" required/>
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form2Example27">Password</label>
-                                            <input name="password" type="password" id="form2Example27" class="form-control form-control-lg" required />
+                                            <label class="form-label" for="txtPassword">Password</label>
+                                            <input name="password" type="password" id="txtPassword" class="form-control form-control-lg" required />
                                         </div>
 
                                         <div class="pt-1 mb-4">

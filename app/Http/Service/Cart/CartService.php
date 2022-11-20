@@ -17,7 +17,7 @@ class CartService
     {
         $qty = (int)$request->input('num-product');
         $product_id = (int)$request->input('product-id');
-
+        $size = $request->input('size');
         if( $qty <= 0 || $product_id <= 0)
             {
                 Toastr::error('Vui lòng chọn số lượng sản phẩm','Cảnh báo');
@@ -25,26 +25,26 @@ class CartService
             }
 
         $carts = Session::get('carts');
-        if (is_null($carts)) {
+        if(is_null($carts)){
             Session::put('carts',[
                 $product_id => $qty,
             ]);
+
             return true;
         }
 
-        $exists = Arr::exists($carts, $product_id,);
+        $exists = Arr::exists($carts,$product_id);
 
-        if ($exists)
-        {
-            $carts[$product_id] =  $carts[$product_id] + $qty;
-            Session::put('carts', $carts);
+        if($exists){
+            $carts[$product_id] = $carts[$product_id] + $qty;
+            Session::put('carts',$carts); 
             return true;
         }
-
+ 
         $carts[$product_id] = $qty;
-        Session::put('carts', $carts);
-
+        Session::put('carts',$carts); 
         return true;
+
     }
 
     public function getProduct()
@@ -56,6 +56,7 @@ class CartService
         }
 
         $productId = array_keys($carts);
+
 
         return Product::select('id', 'name', 'price', 'price_sale', 'thumb')
             ->where('active',1)
@@ -92,7 +93,9 @@ class CartService
                 'phone'=> $request->input('phone'),
                 'address'=> $request->input('address'),
                 'email'=> $request->input('email'),
-                'note'=> $request->input('note')
+                'note'=> $request->input('note'),
+                'active'=> '0',
+                'user_id'=> Auth::user()->id ?? 0
             ]);
 
 

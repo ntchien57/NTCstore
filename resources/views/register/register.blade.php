@@ -19,23 +19,23 @@
                                             style="letter-spacing: 1px; font-weight: bold">ĐĂNG KÍ</h5>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form2Example17">Name</label>
-                                            <input name="name" type="text" id="form2Example17" class="form-control form-control-lg" />
+                                            <label class="form-label" for="txtName">Name</label>
+                                            <input name="name" type="text" id="txtName" class="form-control form-control-lg" required />
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form2Example17">Email</label>
-                                            <input name="email" type="email" id="form2Example17" class="form-control form-control-lg" />
+                                            <label class="form-label" for="txtEmail">Email</label>
+                                            <input name="email" type="email" id="txtEmail" class="form-control form-control-lg" required/>
                                         </div>
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example27">Mật khẩu</label>
-                                            <input name="password" type="password" id="form2Example27" class="form-control form-control-lg" />
+                                            <input name="password" type="password" id="txtPassword" class="form-control form-control-lg" required/>
                                         </div>
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example27">Nhập lại mật khẩu</label>
-                                            <input type="password" id="form2Example27" class="form-control form-control-lg" />
+                                            <input type="password" name="again-password" id="txtAgainPassword" class="form-control form-control-lg" required />
                                         </div>
 
                                         <div class="pt-1 mb-4">

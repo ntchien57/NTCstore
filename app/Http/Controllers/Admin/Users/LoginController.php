@@ -45,7 +45,6 @@ class LoginController extends Controller
             'acounts' => $result
         ]);
 
-
     }
 
     public function logout()
@@ -92,4 +91,20 @@ class LoginController extends Controller
         return redirect('/admin/users/login');
 
     }
+
+
+    public function deleteUser($id){
+        $result = User::findOrFail($id);
+        $result->update(['active' => 0]);
+        Toastr::success('Người dùng đã bị vô hiệu hóa','Success');
+         return redirect()->back();
+    }
+
+    public function editUser($id){
+        $result = User::findOrFail($id);
+        $result->update(['active' => 1]);
+        Toastr::success('Tài khoản đã được kích hoạt','Success');
+         return redirect()->back();
+    }
+
 }

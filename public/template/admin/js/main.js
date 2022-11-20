@@ -8,26 +8,27 @@ $.ajaxSetup({
 
 function removeRow(id, url) {
     if (Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-            )
-        }
-    })) {
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            }
+        })) {
         $.ajax({
             type: 'DELETE',
             datatype: 'JSON',
-            data: { "id":id,
+            data: {
+                "id": id,
                 "_token": "{{ csrf_token() }}"
             },
             url: url,
@@ -39,7 +40,7 @@ function removeRow(id, url) {
                     alert('Xóa không thành công');
                 }
             },
-            error: function (result) {
+            error: function(result) {
                 console.log(result);
             }
         });

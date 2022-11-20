@@ -110,5 +110,21 @@ class Helper
         return self::activeOD($active) ;
     }
 
+    public static function activeOD1($active = 0):string  {
+        if ($active == 0){
+            return '<span style = "color:blue">Chờ xác nhận</span>';
+        }else if ($active == 1){
+            return '<span style = "color:blue">Đang giao</span>';
+        } else if ($active == 2) {
+            return '<span style = "color:blue">Giao hàng thành công</span>';
+        }
+        return '<span style = "color:red">Đã hủy</span>';
+    }
+
+    public static function activeOrder1($active) : string
+    {
+        return self::activeOD1($active) ;
+    }
+
 
 }

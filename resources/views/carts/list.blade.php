@@ -48,7 +48,7 @@
                                             </td>
                                             <td class="column-2" style="text-align: center">{{ $product->name }}</td>
                                             <td class="column-3 p-l-10" style="text-align: center">{{ number_format($price,0,'','.') }}</td>
-                                            <td class="column" style="text-align: center"></td>
+                                            <td class="column" style="text-align: center; padding:0 20px 20px 20px;"></td>
                                             <td class="column-4">
                                                 <div class="wrap-num-product flex-w m-l-auto m-r-0">
                                                     <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
@@ -148,6 +148,11 @@
                             <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
                                 Đặt hàng
                             </button>
+
+                            <span class="flex-c-m m-g-t-15  p-lr-15 ">
+                                <a style="padding-top:30px; color:red" href="/login">Đăng nhập</a>
+                                 <span style="padding-top:30px">&nbsp;<span>để xem trạng thái đơn hàng</span></span> 
+                            </span>
                         </div>
                     </div>
                 </div>

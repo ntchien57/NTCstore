@@ -41,7 +41,6 @@
                     <th class="column-3">Giá</th>
                     <th class="column-4">Số lượng</th>
                     <th class="column-5">Thành tiền</th>
-                    <th cla>Trạng thái</th>
                 </tr>
 
                 @foreach($carts as $key => $cart)
@@ -60,7 +59,6 @@
                             style="text-align: center">{{ number_format($cart->price,0,'','.') }}</td>
                         <td class="column-4">{{ $cart->qty }}</td>
                         <td class="column-5">{{ number_format($price,0,'','.') }}</td>
-                        <td>{!! \App\Helpers\Helper::activeOrder($cart->active) !!}</td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -75,9 +73,9 @@
     </div>
 
     <div class="m-tb-20" style="display: flex; justify-content: center ">
-        <a href="/admin/ship/{{$cart->id}}" class="btn btn-warning m-r-20">Giao hàng</a>
-        <a href="/admin/successShip/{{$cart->id}}" class="btn btn-success m-r-20">Giao thành công</a>
-        <a href="/admin/cancelShip/{{$cart->id}}" class="btn btn-danger m-r-20">Hủy đơn hàng</a>
+        <a href="/admin/ship/{{$customer->id}}" class="btn btn-warning m-r-20">Giao hàng</a>
+        <a href="/admin/successShip/{{$customer->id}}" class="btn btn-success m-r-20">Giao thành công</a>
+        <a href="/admin/cancelShip/{{$customer->id}}" class="btn btn-danger m-r-20">Hủy đơn hàng</a>
     </div>
 
 @endsection

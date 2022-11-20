@@ -7,6 +7,7 @@
         <button type="submit" class="btn-search">
             <i class="fa fa-search" style="color: #0c84ff" ></i>
         </button>
+        
     </form>
     <table class="table">
         <thead>
@@ -17,6 +18,7 @@
             <th>Email</th>
             <th>Địa chỉ</th>
             <th>Ngày Đặt Hàng</th>
+            <th>Trạng Thái</th>
             <th>&nbsp;</th>
         </tr>
         </thead>
@@ -30,20 +32,17 @@
                 <td> {{ $customer->email }}</td>
                 <td> {{ $customer->address }}</td>
                 <td>{{ $customer->created_at }}</td>
+                <td>{!! \App\Helpers\Helper::activeOrder($customer->active) !!}</td>
                 <td>
                     <a class="btn btn-primary btn-sm" href="/admin/customers/view/ {{$customer->id}}">
                         <i class="fas fa-eye"></i>
-                    </a>
-
-                    <a class="btn btn-danger btn-sm"
-                       href="#" onclick="removeRow({{$customer->id}}, '/admin/customers/destroy')">
-                        <i class="fas fa-trash-alt"></i>
                     </a>
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
+
 
     {!! $customers->links('my-pagination') !!}
 @endsection

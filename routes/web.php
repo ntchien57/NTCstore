@@ -74,16 +74,18 @@ Route::prefix('admin')->group(function (){
 
         #order
 
-        Route::get('customers',[OrderController::class,'index']);
+        Route::get('customers',[OrderController::class,'index'])->name('customer');
         Route::get('customers/view/{customer}',[OrderController::class,'show']);
-        Route::get('ship/{customer}',[OrderController::class,'active']);
-        Route::get('successShip/{customer}',[OrderController::class,'successShip']);
-        Route::get('cancelShip/{customer}',[OrderController::class,'cancelShip']);
+        Route::get('ship/{id}',[OrderController::class,'active']);
+        Route::get('successShip/{id}',[OrderController::class,'successShip']);
+        Route::get('cancelShip/{id}',[OrderController::class,'cancelShip']);
 
 
         #acount
 
         Route::get('acounts',[LoginController::class,'show']);
+        Route::get('acounts/destroy/{id}',[LoginController::class,'deleteUser']);
+        Route::get('acounts/edit/{id}',[LoginController::class,'editUser']);
 
     });
 
@@ -140,9 +142,8 @@ Route::prefix('admin')->group(function (){
     Route::post('carts', [CartController::class, 'order']);
 
     #orderStatus
-
     Route::get('orderStatus',[OrderStatusController::class,'show']);
-    Route::get('orderStatus/destroy/{id}',[OrderStatusController::class,'destroy']);
+    Route::post('orderStatus/destroy/{id}',[OrderStatusController::class,'destroy']);
 
 
 

@@ -108,13 +108,32 @@
                             {{--                                </div>--}}
                             {{--                            </div>--}}
                             {{--                        </div>--}}
-
+                            <form action="/add-cart" method="post">
+                            {{-- <div class="flex-w  p-b-10">
+                                <div class="size-204" style="display:flex;">
+                                        <label class="label-size" id="label-size1">
+                                            <input id="input-size1" class="input-size" type="radio" name="size" value="S">
+                                            <span>S</span>
+                                        </label>
+                                        <label class="label-size" id="label-size2" >
+                                            <input id="input-size2" class="input-size" type="radio" name="size" value="M">
+                                            <span>M</span>
+                                        </label>
+                                        <label class="label-size" id="label-size3">
+                                            <input id="input-size3" class="input-size" type="radio" name="size" value="L">
+                                            <span>L</span>
+                                        </label>
+                                        <label class="label-size" id="label-size4">
+                                            <input id="input-size4" class="input-size" type="radio" name="size" value="XL">
+                                            <span>XL</span>
+                                        </label>
+                                </div>
+                            </div> --}}
                             <div class="flex-w flex-r-m p-b-10">
                                 <div class="m-r-30 p-b-65">
                                     Số lượng
                                 </div>
-                                <div class="size-204 flex-w flex-m respon6-next">
-                                    <form action="/add-cart" method="post">
+                                <div class="size-204  respon6-next">                                   
                                         <div class="wrap-num-product flex-w m-r-20 m-tb-10">
                                             <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
                                                 <i class="fs-16 zmdi zmdi-minus"></i>
@@ -290,6 +309,7 @@
         </div>
         </div>
     </section>
+
 @endsection
 
 

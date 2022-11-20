@@ -4,13 +4,16 @@ body,
 html {
     font-family: 'Roboto', sans-serif !important;
 }
-.user-name{
+
+.user-name {
     color: #000;
     font-size: 16px;
 }
-.user-name:hover{
+
+.user-name:hover {
     cursor: pointer;
 }
+
 .search:focus {
     border-bottom: 1px solid #0c84ff;
 }
@@ -19,7 +22,6 @@ html {
     border-top-left-radius: 100px;
     border-bottom-right-radius: 100px;
 }
-
 
 .search {
     position: relative;
@@ -72,7 +74,7 @@ html {
     color: #0170f0;
 }
 
-.dropdown-logout{
+.dropdown-logout {
     max-width: 260px;
     min-width: 160px;
     padding: 0;
@@ -105,4 +107,20 @@ html {
 
 .pagination1 a:hover:not(.active1) {
     background-color: #ddd;
+}
+
+.label-size {
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.label-border {
+    border: 1px solid rgb(232, 12, 12);
+}
+
+.input-size {
+    display: none;
 }

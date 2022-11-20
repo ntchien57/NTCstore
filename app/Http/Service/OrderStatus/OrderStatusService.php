@@ -13,4 +13,8 @@ class OrderStatusService
         }])
             ->get();
     }
+
+    public function getLastCustomerIdByUserId($user_id){
+        return Cart::select('customer_id')->where('user_id',$user_id)->where()->orderByDesc('id');
+    }
 }

@@ -8,13 +8,14 @@
             <i class="fa fa-search" style="color: #0c84ff" ></i>
         </button>
     </form>
-    <table class="table">
+    <table class="table" style="text-align: center">
         <thead>
         <tr>
             <th>ID</th>
             <th>Tên</th>
-            <th>Email</th>
-            <th>level</th>
+            <th>Email</th>       
+            <th>Level</th>
+            <th>Trạng thái</th>
             <th>&nbsp;</th>
         </tr>
         </thead>
@@ -26,13 +27,14 @@
                 <td> {{ $acount->name }}</td>
                 <td> {{ $acount->email }}</td>
                 <td> {{ $acount->level }}</td>
+                <td>{!! \App\Helpers\Helper::active($acount->active) !!}</td>
                 <td>
                     <a class="btn btn-primary btn-sm" href="/admin/acounts/edit/ {{$acount->id}}">
-                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-check"></i>
                     </a>
-
+                    
                     <a class="btn btn-danger btn-sm"
-                       href="#" onclick="removeRow({{$acount->id}}, '/admin/acounts/destroy')">
+                       href="/admin/acounts/destroy/ {{$acount->id}}">
                         <i class="fas fa-trash-alt"></i>
                     </a>
                 </td>

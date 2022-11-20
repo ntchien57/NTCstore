@@ -37,30 +37,30 @@ class OrderController extends Controller
     }
 
     public function active($id){
-        Cart::where('id',$id)->update([
+        Customer::where('id',$id)->update([
             'active'=> '1'
         ]);
 
        Toastr::success('Hàng đang giao','Thành công');
-       return redirect()->back();
+       return redirect()->route('customer');
     }
 
     public function successShip($id){
-        Cart::where('id',$id)->update([
+        Customer::where('id',$id)->update([
             'active'=> '2'
         ]);
 
         Toastr::success('Giao hàng thành công','Thành công');
-        return redirect()->back();
+        return redirect()->route('customer');
     }
 
     public function cancelShip($id){
-        Cart::where('id',$id)->update([
+        Customer::where('id',$id)->update([
             'active'=> '3'
         ]);
 
         Toastr::error('Hủy đơn hàng','Hủy');
-        return redirect()->back();
+        return redirect()->route('customer');
     }
 
 
