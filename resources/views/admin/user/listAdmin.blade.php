@@ -40,6 +40,5 @@
         @endforeach
         </tbody>
     </table>
-    {!! $acounts->links('my-pagination') !!}
 
 @endsection

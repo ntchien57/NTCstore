@@ -31,7 +31,7 @@
                  <td> {{ $product->price }}</td>
                 <td>{{ $product->price_sale }}</td>
                 <td> {!! \App\Helpers\Helper::active($product->active) !!}</td>
-                <td><img src="{{ $product->thumb }}" alt="" width="80px" height="80px"></td>
+                <td><img src="{{ $product->thumb }}" alt="" width="70px" height="70px"></td>
                 <td>
                     <a class="btn btn-primary btn-sm" href="/admin/product/edit/ {{$product->id}}">
                         <i class="fas fa-edit"></i>
@@ -48,5 +48,5 @@
         </tbody>
     </table>
 
-    {!! $products->links() !!}
+    {!! $products->links('my-pagination') !!}
 @endsection

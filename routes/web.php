@@ -82,8 +82,8 @@ Route::prefix('admin')->group(function (){
 
 
         #acount
-
-        Route::get('acounts',[LoginController::class,'show']);
+        Route::get('acounts',[LoginController::class,'showAdmin']);
+        Route::get('acounts/user',[LoginController::class,'show']);
         Route::get('acounts/destroy/{id}',[LoginController::class,'deleteUser']);
         Route::get('acounts/edit/{id}',[LoginController::class,'editUser']);
 

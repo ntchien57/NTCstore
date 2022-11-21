@@ -24,4 +24,13 @@ class Customer extends Model
     {
         return $this->hasMany(Cart::class,'customer_id','id');
     }
+
+    public function scopeSearch($query)
+    {
+        if ($key = request()->input('key-search')) {
+            $query = $query
+                ->where('phone', 'like',  $key);
+        }
+        return $query;
+    }
 }

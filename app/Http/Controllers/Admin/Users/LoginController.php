@@ -39,13 +39,27 @@ class LoginController extends Controller
 
     public function show()
     {
-        $result = User::orderByDesc('id')->get();
+        $result = User::orderByDesc('id')
+        ->where('level',0)
+        ->search()
+        ->paginate(9);
         return view('admin.user.list',[
-            'title'=>'Danh sách tài khoản',
+            'title'=>'Danh sách tài khoản người dùng',
             'acounts' => $result
         ]);
 
     }
+
+    public function showAdmin()
+    {
+        $result = User::orderByDesc('id')->where('level',1)->get();
+        return view('admin.user.listAdmin',[
+            'title'=>'Danh sách tài khoản admin',
+            'acounts' => $result
+        ]);
+
+    }
+    
 
     public function logout()
     {

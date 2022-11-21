@@ -138,7 +138,7 @@ class CartService
 
     public function getCustomer()
     {
-        return Customer::orderByDesc('id')->paginate(9);
+        return Customer::orderByDesc('id')->search()->paginate(9);
     }
 
     public function getProductForCart($customer){

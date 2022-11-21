@@ -20,18 +20,17 @@ class Product extends Model
         'thumb'
     ];
 
-    public function menu(){
-        return $this->hasOne(Menu::class,'id','menu_id');
+    public function menu()
+    {
+        return $this->hasOne(Menu::class, 'id', 'menu_id');
     }
 
-    public function scopeSearch($query){
-        if ($key = request()->input('key-search')){
+    public function scopeSearch($query)
+    {
+        if ($key = request()->input('key-search')) {
             $query = $query
-                ->where('name','like', '%'.$key.'%');
+                ->where('name', 'like', '%' . $key . '%');
         }
-
         return $query;
-
     }
-
 }

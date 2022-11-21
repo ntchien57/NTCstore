@@ -13,14 +13,21 @@
                     <a href="#" class="nav-link ">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
-                            Tài khoản
+                           Quản lý tài khoản 
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="/admin/acounts" class="nav-link">
-                                <p>Danh sách </p>
+                                <p>Danh sách admin </p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/acounts/user" class="nav-link">
+                                <p>Danh sách user </p>
                             </a>
                         </li>
                     </ul>
@@ -32,7 +39,7 @@
                     <a href="#" class="nav-link ">
                         <i class="nav-icon fas fa-home"></i>
                         <p>
-                           Danh mục
+                            Quản lý danh mục
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -56,7 +63,7 @@
                     <a href="#" class="nav-link ">
                         <i class="nav-icon fas  fa-tachometer-alt"></i>
                         <p>
-                             Sản Phẩm
+                            Quản lý sản phẩm
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -80,19 +87,19 @@
                     <a href="#" class="nav-link ">
                         <i class="nav-icon fas  fa-image"></i>
                         <p>
-                            Slider
+                            Quản lý slide
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="/admin/sliders/add" class="nav-link ">
-                                <p>Thêm slider</p>
+                                <p>Thêm slide</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/admin/sliders/list" class="nav-link">
-                                <p>Danh sách slider</p>
+                                <p>Danh sách slide</p>
                             </a>
                         </li>
                     </ul>
@@ -104,14 +111,14 @@
                     <a href="#" class="nav-link ">
                         <i class="nav-icon fas  fa-image"></i>
                         <p>
-                            Đơn hàng
+                            Quản lý đơn hàng
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="/admin/customers" class="nav-link">
-                                <p>Danh sách</p>
+                                <p>Danh sách đơn</p>
                             </a>
                         </li>
                     </ul>
