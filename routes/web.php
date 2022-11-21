@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\OrderStatusController;
 use App\Http\Controllers\Api\GoogleController;
 use App\Http\Controllers\Api\FacebookController;
+use App\Http\Controllers\InformationController;
 
 #adminLogin
 
@@ -144,6 +145,13 @@ Route::prefix('admin')->group(function (){
     #orderStatus
     Route::get('orderStatus',[OrderStatusController::class,'show']);
     Route::post('orderStatus/destroy/{id}',[OrderStatusController::class,'destroy']);
+
+    #information
+    Route::get('infor',[InformationController::class,'show']);
+
+    #contact
+    Route::get('contact',[InformationController::class,'contact']);
+
 
 
 

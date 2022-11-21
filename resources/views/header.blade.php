@@ -22,11 +22,11 @@
                     </li>
                     {!! $menusHtml !!}
                     <li>
-                        <a href="about.html">THÔNG TIN</a>
+                        <a href="/infor">THÔNG TIN</a>
                     </li>
 
                     <li>
-                        <a href="contact.html">LIÊN HỆ</a>
+                        <a href="/contact">LIÊN HỆ</a>
                     </li>
                 </ul>
             </div>
