@@ -150,8 +150,6 @@
                             </button>
 
                             <span class="flex-c-m m-g-t-15  p-lr-15 ">
-                                <a style="padding-top:30px; color:red" href="/login">Đăng nhập</a>
-                                 <span style="padding-top:30px">&nbsp;<span>để xem trạng thái đơn hàng</span></span> 
                             </span>
                         </div>
                     </div>

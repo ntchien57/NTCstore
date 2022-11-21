@@ -17,6 +17,8 @@ use App\Http\Controllers\OrderStatusController;
 use App\Http\Controllers\Api\GoogleController;
 use App\Http\Controllers\Api\FacebookController;
 use App\Http\Controllers\InformationController;
+use App\Http\Controllers\SupportCustomerMailController;
+use App\Mail\SupportCustomer;
 
 #adminLogin
 
@@ -152,6 +154,9 @@ Route::prefix('admin')->group(function (){
     #contact
     Route::get('contact',[InformationController::class,'contact']);
 
+    #suportCustomer
+    Route::get('support',[SupportCustomerMailController::class,'index'])->name('support');
+    Route::post('support',[SupportCustomerMailController::class,'support']);
 
 
 

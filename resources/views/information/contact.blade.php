@@ -5,7 +5,7 @@
     <div class="container" >
         <div class="flex-w flex-tr">
             <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-                <form>
+                <form action="/support" method="POST">
                     <h4 class="mtext-105 cl2 txt-center p-b-30">
                         Gửi tin nhắn cho chúng tôi
                     </h4>
@@ -21,6 +21,7 @@
                     <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
                         Submit
                     </button>
+                    @csrf
                 </form>
             </div>
 
