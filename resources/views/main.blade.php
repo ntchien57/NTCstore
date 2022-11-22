@@ -1,21 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  @include('head')
+    @include('head')
 </head>
-<body >
 
-{{--class="animsition"--}}
+<body>
 
-<!-- Header -->
+    {{-- class="animsition" --}}
+
+    <!-- Header -->
     @include('header')
 
-<!-- Cart -->
+    <!-- Cart -->
     @include('cart')
 
     @yield('content')
-<!-- Cart -->
-     @include('footer')
+    <!-- Cart -->
+
+    @include('footer')
+
+    @include('sweetalert::alert')
 </body>
+
 </html>

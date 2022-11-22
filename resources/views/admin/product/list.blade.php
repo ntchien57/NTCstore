@@ -8,12 +8,13 @@
             <i class="fa fa-search" style="color: #0c84ff" ></i>
         </button>
     </form>
-    <table class="table">
+    <table class="table" style="text-align: center">
         <thead>
         <tr>
             <th style="width: 80px">ID</th>
             <th>Tên sản phẩm</th>
             <th>Danh mục</th>
+            <th>Tồn kho</th>
             <th>Giá gốc</th>
             <th>Giá giảm</th>
             <th>Trạng Thái</th>
@@ -28,6 +29,7 @@
                 <td> {{ $product->id }}</td>
                 <td> {{ $product->name }}</td>
                  <td> {{ $product->menu->name }}</td>
+                 <td>{{ $product->available }}</td>
                  <td> {{ $product->price }}</td>
                 <td>{{ $product->price_sale }}</td>
                 <td> {!! \App\Helpers\Helper::active($product->active) !!}</td>

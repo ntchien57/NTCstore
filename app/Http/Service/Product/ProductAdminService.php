@@ -49,7 +49,7 @@ class ProductAdminService
         catch (\Exception $err){
 
 //            Session::flash('success','Thêm sản phẩm thành công');
-            Toastr::success('Thêm sản phẩm thất bại','Thất bại');
+            Toastr::error('Thêm sản phẩm thất bại','Thất bại');
 
             Log::info($err->getMessage());
             return false;

@@ -337,6 +337,8 @@
     </div>
 </div>
 
+<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+
 <script src="/template/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 <script src="/template/vendor/animsition/js/animsition.min.js"></script>

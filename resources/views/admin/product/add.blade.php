@@ -38,6 +38,11 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <label for=""> Số lượng hàng có sẵn</label>
+                <input type="number" class="form-control"  name="available" placeholder="Số lượng hàng có sẵn" id="available">{{ old('available') }}
+            </div>
+
 
             <div class="form-group">
                 <label for=""> Mô tả </label>

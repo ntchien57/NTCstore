@@ -71,6 +71,8 @@
 							{!! \App\Helpers\Helper::price($product->price) !!} <sup>đ</sup>
                         </span>
 
+                        <div class="p-t-20 " style="font-size: 14px">Miễn phí vận chuyển cho đơn hàng từ <sup>đ</sup>100.000</div>
+
                         <!--  -->
                         <div class="p-t-33">
 {{--                            <div class="flex-w flex-r-m p-b-10">--}}
@@ -130,7 +132,7 @@
                                 </div>
                             </div> --}}
                             <div class="flex-w flex-r-m p-b-10">
-                                <div class="m-r-30 p-b-65">
+                                <div class="p-r-40 p-b-120">
                                     Số lượng
                                 </div>
                                 <div class="size-204  respon6-next">                                   
@@ -145,6 +147,10 @@
                                             <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
                                                 <i class="fs-16 zmdi zmdi-plus"></i>
                                             </div>
+                                        </div>
+
+                                        <div class="p-t-20">
+                                            {{ $product->available }}<span> sản phẩm có sẵn</span>
                                         </div>
 
                                         <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail m-t-30">

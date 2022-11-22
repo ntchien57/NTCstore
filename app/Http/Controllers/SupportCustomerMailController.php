@@ -7,6 +7,7 @@ use Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use Alert;
 
 class SupportCustomerMailController extends Controller
 {
@@ -23,7 +24,7 @@ class SupportCustomerMailController extends Controller
                 'msg' => $msg
             ]);
         }
-        
+       
         return redirect()->route('support');
     }
 
@@ -31,9 +32,10 @@ class SupportCustomerMailController extends Controller
 
         Mail::to("ntchien5701@gmail.com")->send(new SupportCustomer);
 
-        Toastr::success('Thành công','Cảm ơn bạn đã liên hệ chusngtooi sẽ phản hồi sớm nhất có thể');
-
         return redirect('/contact');
+
+        Alert::success('Thành công','Cảm ơn bạn đã liên hệ chúng tôi sẽ phản hồi sớm nhất có thể');
+
     }
 
 

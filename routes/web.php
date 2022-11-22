@@ -158,7 +158,7 @@ Route::prefix('admin')->group(function (){
     Route::get('support',[SupportCustomerMailController::class,'index'])->name('support');
     Route::post('support',[SupportCustomerMailController::class,'support']);
 
-
+    
 
 
 

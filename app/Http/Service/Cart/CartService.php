@@ -18,11 +18,17 @@ class CartService
         $qty = (int)$request->input('num-product');
         $product_id = (int)$request->input('product-id');
         $size = $request->input('size');
+        $number_available = Product::select('available')->where('id',$product_id)->first();
         if( $qty <= 0 || $product_id <= 0)
             {
-                Toastr::error('Vui lòng chọn số lượng sản phẩm','Cảnh báo');
+                Toastr::error('Số lượng mua tối thiểu là 1','Cảnh báo');
                 return false;
             }
+
+        elseif($qty>$number_available->available){
+            Toastr::error('Số lượng đặt hàng vượt quá số lượng có sẵn','Cảnh báo');
+            return false;
+        }
 
         $carts = Session::get('carts');
         if(is_null($carts)){
@@ -96,10 +102,11 @@ class CartService
                 'note'=> $request->input('note'),
                 'active'=> '0',
                 'user_id'=> Auth::user()->id ?? 0
-            ]);
+            ]);          
 
 
             $this->infoProductCart($carts, $customer->id );
+
 
             DB::commit();
 
@@ -117,20 +124,23 @@ class CartService
     public function infoProductCart($carts,$customer_id)
     {
         $productId = array_keys($carts);
-        $products =  Product::select('id', 'name', 'price', 'price_sale', 'thumb')
+        $products =  Product::select('id', 'name', 'price', 'price_sale', 'thumb','available')
             ->where('active',1)
             ->whereIn('id',$productId)
             ->get();
-
-        $data = [];
         foreach ($products as $key => $product){
+
+            $num = $product->available - $carts[$product->id];
+            $product->available = $num;
+            $product->save();
+       
             $data[] = [
                 'customer_id' => $customer_id,
                 'product_id' => $product->id,
                 'qty'=> $carts[$product->id],
                 'price'=> $product->price_sale != 0 ? $product->price_sale : $product->price,
                 'active'=> '0',
-                'user_id'=> isset(Auth::user()->id) ? Auth::user()->id : null
+                'user_id'=> isset(Auth::user()->id) ? Auth::user()->id : null,               
             ];
         }
        return Cart::insert($data);
